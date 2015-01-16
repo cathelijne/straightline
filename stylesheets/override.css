@@ -1,0 +1,7 @@
+body {
+  background-image: url('../images/background1.jpg');
+}
+
+.wrapper {
+  background: scale-color(rgba(94,38,5,0.4));
+}

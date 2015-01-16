@@ -1,0 +1,52 @@
+{% include '_header.twig' %}
+
+              {% if records is defined and records|length > 0 %}
+                {% set record = records|first %}
+              {% endif %}
+
+              {% if not record is defined %}
+                <h1>No content found!</h1>
+                <p>You have no content in your database. Go write some awesome stuff or add some dummy content in Configuration -> Check database</p>
+                <p>If you think content should show up here, check your homepage setting in Configuration -> Main</p>
+              {% else %}
+
+                <article>
+                  <h2>{{ record.title }}</h2>
+                  {% if record.video is not empty %}
+                    <p class="zoom2 large-10 large-centered columns"><img src="{{ record.video.thumbnail }}" alt="{{ record.video.title }}"/></p>
+                  {% elseif record.image is not empty %}
+                    <p class="large-10 large-centered columns"><img src="{{ image(record.image) }}" alt=""/></p>
+                  {% endif %}
+                  {{ record.teaser is not empty ? record.teaser : record|excerpt(100) }} 
+                  <a href="{{ record.link }}" class="button secondary tiny">full article &raquo;</a>
+                </article>
+
+                <div class="row spacer6"></div>
+
+                <hr>
+
+                <div class="row">
+                  <div class="small-12 medium-6 columns">
+                    <h3>Latest Entries</h3>
+                    <ul>
+                    {% setcontent mycontent = 'entries/latest/5' %}
+                      {% for item in mycontent %}
+                        <li><a href="{{ item.link }}">{{ item.title }}</a></li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                
+                  <div class="small-12 medium-6 columns">
+                    <h3>Latest Pages</h3>
+                    <ul>
+                    {% setcontent mypages = 'pages/latest/5' %}
+                      {% for item in mypages %}
+                        <li><a href="{{ item.link }}">{{ item.title }}</a></li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                </div>
+
+              {% endif %}
+
+{% include '_footer.twig' %}

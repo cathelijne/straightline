@@ -1,0 +1,42 @@
+{% include '_header.twig' %}
+
+              <div class="row spacer3"></div>
+
+                <div class="row small-12 medium-10 columns">
+                  <h2>Search Results</h2>
+
+                  {% if records is defined and records|length > 0 %}
+
+                      <dl>
+                        {% for record in records %}
+
+                          <dt>{{ record.title }}</dt>
+                          <dd>
+                            {{ record.teaser is defined and record.teaser is not empty ? record.teaser|excerpt(200) : record|excerpt(200) }}<br />
+                            <small>published on {{ record.datepublish|localdate("%B %e %Y") }}{% include '_sub_taxonomylinks.twig' %}</small><br />
+                            <a href="{{ record.link }}" class="button secondary tiny">full article &raquo;</a>
+                          </dd>
+
+                        {% endfor %}
+                    </dl>
+
+                   {{ pager() }}
+
+                  {% else %}
+                    <div class="row spacer4"></div>
+                    <p>We couldn't find any records, why don't you search for something else?</p>
+                    <div class="row spacer4"></div>
+                    <form method="get" action="/search" id="searchform" enctype="text/plain">
+                      <div class="row collapse">
+                        <div class="small-10 columns">
+                          <input type="search" value="happalaflappa" placeholder="Search …" name="search">
+                        </div>
+                        <div class="small-2 columns">
+                          <button type="submit" class="button small postfix"></button>
+                        </div>
+                      </div>
+                    </form>
+                    <div class="row spacer6"></div>
+                  {% endif %}
+
+{% include '_footer.twig' %}

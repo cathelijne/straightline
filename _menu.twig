@@ -1,0 +1,9 @@
+{% if 'offcanvas' in app.config.get('menu')|keys %}
+  {{ menu('offcanvas', '_sub_menu_offcanvas.twig') }}
+{% elseif 'topbar' in app.config.get('menu')|keys %}
+  {{ menu('topbar', '_sub_menu_topbar.twig') }}
+{% elseif 'main' in app.config.get('menu')|keys %}
+  {{ menu('topbar', '_sub_menu_topbar.twig') }}
+{% else %}
+  No menu named main, topbar or offcanvas defined. Please create one in menu.yml
+{% endif %}

@@ -1,0 +1,44 @@
+{% include '_header.twig' %}
+
+    {% if not record is defined %}
+      <h1>No content found!</h1>
+      <p>Something went wrong. No record defined.</p>
+    {% else %}
+
+      <article>
+        <h2>{{ record.title }}</h2>
+        {{ record.teaser is defined and record.teaser is not empty ? record.teaser : '' }}
+        {% if record.image is defined and record.image is not empty %}
+          <p class="large-10 large-centered columns"><img src="{{ image(record.image) }}" alt=""/></p>
+        {% endif %}
+        {{ record.body }}
+        {% include '_recordfooter.twig' %}
+      </article>
+
+      <hr>
+
+      <div class="row">
+        <div class="small-12 medium-6 columns">
+          <h3>Latest Entries</h3>
+          <ul>
+          {% setcontent mycontent = 'entries/latest/5' %}
+            {% for item in mycontent %}
+              <li><a href="{{ item.link }}">{{ item.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+
+        <div class="small-12 medium-6 columns">
+          <h3>Latest Pages</h3>
+          <ul>
+          {% setcontent mypages = 'pages/latest/5' %}
+            {% for item in mypages %}
+              <li><a href="{{ item.link }}">{{ item.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+
+    {% endif %}
+
+{% include '_footer.twig' %}

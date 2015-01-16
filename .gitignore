@@ -1,0 +1,9 @@
+bower_components/*
+bower.json
+config.rb
+Gemfile
+Gemfile.lock
+.bowerrc
+.git/*
+.sass-cache/*
+.DS_Store

@@ -1,0 +1,10 @@
+{% set numbers = { 1:'one', 2:'two', 3:'three', 4:'four', 5:'five', 6:'six', 7:'seven', 8:'eight'} %}
+{% set word = numbers[menu|length] %}
+
+  <span class="icon-bar {{ word }}-up">
+    {% for item in menu %}
+       <a href="{{ item.link }}" class="item">
+         <i class="{{ item.icon }}"></i>
+       </a>
+    {% endfor %}
+  </span>

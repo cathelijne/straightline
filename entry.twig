@@ -1,0 +1,64 @@
+{% include '_header.twig' %}
+
+      <article>
+        <h2>{{ record.title }}</h2>
+        <em>{{ record.teaser is not empty ? record.teaser : '' }}</em>
+        {% if record.image is defined and record.image is not empty %}
+          <p class="large-10 large-centered columns"><img src="{{ image(record.image) }}" alt=""/></p>
+        {% elseif record.video is defined and record.video is not empty %}
+          <h5>Video: {{ record.video.title }}</h4>
+          <div class="flex-video widescreen large-10 large-centered columns">
+            <iframe
+              width="{{ record.video.width }}" height="{{ record.video.height }}"
+              src="{{ record.video.url|replace({'watch?v=': 'embed/'}) }}"
+              frameborder="0" allowfullscreen>
+            </iframe>
+          </div>
+        {% endif %}
+        {{ record.body }}
+
+        {% include '_recordfooter.twig' with {record: record} %}
+
+      </article>
+
+      <div class="row spacer2"></div>
+
+        <p class="meta">
+            {% set previous = record.previous('id') %}
+            {% if previous %}
+                <a href="{{ previous.link }}">&laquo; {{ previous.title }}</a>
+            {% endif %}
+            {% set next = record.next('id') %}
+            {% if next %}
+                - <a href="{{ next.link }}">{{ next.title }} &raquo;</a>
+            {% endif %}
+        </p>
+
+      <div class="row spacer2"></div>
+
+      <hr>
+
+      <div class="row">
+        <div class="small-12 medium-6 columns">
+          <h3>Latest Entries</h3>
+          <ul>
+          {% setcontent mycontent = 'entries/latest/5' %}
+            {% for item in mycontent %}
+              <li><a href="{{ item.link }}">{{ item.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+
+        <div class="small-12 medium-6 columns">
+          <h3>Latest Pages</h3>
+          <ul>
+          {% setcontent mypages = 'pages/latest/5' %}
+            {% for item in mypages %}
+              <li><a href="{{ item.link }}">{{ item.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+
+
+{% include '_footer.twig' %}

@@ -1,0 +1,151 @@
+//@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300);
+@import url(http://fonts.googleapis.com/css?family=Raleway:100,300);
+@import "settings";
+@import "foundation";
+@import "icons";
+
+// Or selectively include components
+// @import
+//   "foundation/components/accordion",
+//   "foundation/components/alert-boxes",
+//   "foundation/components/block-grid",
+//   "foundation/components/breadcrumbs",
+//   "foundation/components/button-groups",
+//   "foundation/components/buttons",
+//   "foundation/components/clearing",
+//   "foundation/components/dropdown",
+//   "foundation/components/dropdown-buttons",
+//   "foundation/components/flex-video",
+//   "foundation/components/forms",
+//   "foundation/components/grid",
+//   "foundation/components/inline-lists",
+//   "foundation/components/joyride",
+//   "foundation/components/keystrokes",
+//   "foundation/components/labels",
+//   "foundation/components/magellan",
+//   "foundation/components/orbit",
+//   "foundation/components/pagination",
+//   "foundation/components/panels",
+//   "foundation/components/pricing-tables",
+//   "foundation/components/progress-bars",
+//   "foundation/components/reveal",
+//   "foundation/components/side-nav",
+//   "foundation/components/split-buttons",
+//   "foundation/components/sub-nav",
+//   "foundation/components/switches",
+//   "foundation/components/tables",
+//   "foundation/components/tabs",
+//   "foundation/components/thumbs",
+//   "foundation/components/tooltips",
+//   "foundation/components/top-bar",
+//   "foundation/components/type",
+//   "foundation/components/offcanvas",
+//   "foundation/components/visibility";
+
+ul.pagination li.active a, ul.pagination li.active button {
+  background: $primary-color;
+  color: white;
+  font-weight: bold;
+  cursor: default;
+}
+
+ul.pagination li.active a:hover, ul.pagination li.active a:focus, ul.pagination li.active button:hover, ul.pagination li.active button:focus {
+  background: $primary-color;
+}
+
+
+body {
+  background-image: url('../images/bakground1.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 100;
+}
+
+h1, h2 {
+  margin-top: 1em;
+  vertical-align: baseline;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+.hi {
+  min-height: 100%;
+}
+
+.wrapper {
+  background: scale-color(rgba(121,63,13,0.4), $lightness: -5%);
+}
+
+.full {
+  width: 100% !important;
+  max-width: 100%;
+}
+
+#header {
+  background: transparent;
+}
+
+#content {
+  background: #FFFFFF;
+  overflow: auto;
+  min-height: 100vh;
+}
+
+a.white {color: $white; font-variant: small-caps; }
+a.white:link {color: $white;}
+a.white:active {color: $white;}
+a.white:hover {color: $white;}
+a.white:visited {color: $white;}
+i.white {padding: 0.05em; margin: 0.05em;}
+
+.circlediv {
+  border-radius: 50%;
+  border: 0.2em solid $white;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+.vertical-align {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#header>.row>.columns>h1>a {
+  color: #EEEEEE;
+  text-shadow: 0.1em 0.1em 0.2em $oil;
+}
+
+#header>.row>.columns>h3 {
+  margin-top: 1em;
+  color: #EEEEEE;
+  text-shadow: 0.1em 0.1em 0.2em $oil;
+}
+
+.spacer1 {height: 1em;}
+.spacer2 {height: 2em;}
+.spacer3 {height: 3em;}
+.spacer4 {height: 4em;}
+.spacer5 {height: 5em;}
+.spacer6 {height: 6em;}
+.spacer7 {height: 7em;}
+.spacer8 {height: 8em;}
+.spacer9 {height: 9em;}
+.spacer10 {height: 10em;}
+.spacer11 {height: 11em;}
+.spacer12 {height: 12em;}
+
+.zoom2 {zoom: 2;}
+.zoom4 {zoom: 4;}
+

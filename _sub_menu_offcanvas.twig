@@ -1,0 +1,33 @@
+    {% set offcanvasmenu = true %}
+
+    <div class="off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">
+        <a class="left-off-canvas-toggle fixed white"><i class="fi-list white"></i> Menu</a>
+
+        <aside class="left-off-canvas-menu">
+          <ul class="off-canvas-list">
+            <li><label>{{ app.config.get('general/sitename') }}</label></li>
+            <!-- iterate over menu from menu.yaml -->
+            {% for item in menu %}
+            {% if item.submenu is defined %}
+              <li><label>{{ item.label }}</label></li>
+              {% for item in item.submenu %}
+                <li><a href="{{ item.path is defined ? item.path : item.link }}">{{ item.label }}</a></li>
+              {% endfor %}
+            {% else %}
+              <li><a href="{{ item.path is defined ? item.path : item.link }}">{{ item.label }}</a></li>
+            {% endif %}
+            {% endfor %}
+            <!-- searchbox -->
+            <li><label>Search</label></li>
+            {% include '_sub_searchbox.twig' %}
+            <!-- social icons -->
+            {% if 'iconbar' in app.config.get('menu')|keys %}
+            <li><label>Elsewhere</label></li>
+            <li>{{ menu('iconbar', '_sub_menu_iconbar.twig') }}</li>
+            {% endif %}
+          </ul>
+        </aside>
+
+        <section>
+        <!-- start off-canvas content-->

@@ -1,0 +1,30 @@
+    <nav class="top-bar" data-topbar role="navigation">
+
+    <ul class="title-area">
+      <li class="name"></li>
+      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
+
+    <section class="top-bar-section">
+      <!-- Right Nav Section -->
+      <ul class="left">
+        {% for item in menu %}
+        {% if item.submenu is defined %}
+          <li class="has-dropdown"><a href="{{ item.path is defined ? item.path : item.link }}">{{ item.label }}</a>
+            <ul class="dropdown">
+              {% for item in item.submenu %}
+              <li><a href="{{ item.path is defined ? item.path : item.link }}">{{ item.label }}</a></li>
+              {% endfor %}
+            </ul>
+          </li>
+        {% else %}
+          <li><a href="{{ item.path is defined ? item.path : item.link }}">{{ item.label }}</a></li>
+        {% endif %}
+        {% endfor %}
+      </ul>
+      <ul class="right">
+        <li>{% include '_sub_searchbox.twig' %}</li>
+      </ul>
+    </section>
+
+    </nav>

@@ -1,0 +1,28 @@
+              <div class="row">
+                <div class="small-12 medium-10 columns">
+                  <div class="row spacer12"></div>
+                  <h6 class="subheader">This site was made with <a href="http://bolt.cm">Bolt</a></h6>
+                </div>
+              </div>
+            </div><!--small-12-columns-->
+          </div><!--row-->
+        </div><!--content-->
+      </div><!--full row-->
+
+      {% if 'offcanvasmenu' == true %}
+      <!-- close the offcanvas menu -->
+      </section>
+        <a class="exit-off-canvas"></a>
+      </div>
+      </div>
+      <script>$('a.left-off-canvas-toggle').on('click',function(){
+      });</script>
+      {% endif %}
+
+    </div><!--full wrapper-->
+
+    <script src="{{ paths.theme }}javascripts/modernizr.js"></script>
+    <script src="{{ paths.theme }}javascripts/foundation.min.js"></script>
+    <script src="{{ paths.theme }}javascripts/app.js"></script>
+  </body>
+</html>

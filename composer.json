@@ -1,0 +1,26 @@
+{
+    "name": "lijn/straightline",
+    "description": "Straight Line is a fully responsive theme for Bolt 2.0 and up, written with Foundation 5 and Sass.",
+    "type": "bolt-theme",
+    "keywords": ["theme", "foundation", "responsive", "sass"],
+    "require": {
+        "bolt/bolt": ">=2.0.0,<3.0.0"
+    },
+    "license": "Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)",
+    "authors": [
+        {
+            "name": "lijn",
+            "email": "bolt@hornstra.com"
+        }
+    ],
+  
+  "extra": {
+        "bolt-screenshots": [
+            "screenshots/screenshotlargenoresults.png",
+            "screenshots/screenshotlargesearchbar.png",
+            "screenshots/screenshotlargesearchresults.png",
+            "screenshots/screenshotmediumlandscape.png",
+            "screenshots/screenshotsmall.png"
+        ]
+    }
+}
