@@ -1,4 +1,3 @@
-//@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300);
 @import url(http://fonts.googleapis.com/css?family=Raleway:100,300);
 @import "settings";
 @import "foundation";
@@ -41,6 +40,20 @@
 //   "foundation/components/type",
 //   "foundation/components/offcanvas",
 //   "foundation/components/visibility";
+
+@media #{$small-only} {
+  body {
+    background-position: top;
+    background-size: auto 50%;
+    -webkit-background-size: auto 50%;
+    -moz-background-size: auto 50%;
+    -o-background-size: auto 50%;
+  }
+
+  h1 {
+    font-size: 2.5em;
+  }
+}
 
 ul.pagination li.active a, ul.pagination li.active button {
   background: $primary-color;
