@@ -41,7 +41,7 @@
 //   "foundation/components/offcanvas",
 //   "foundation/components/visibility";
 
-@media #{$small-only} {
+@media #{$small-only} and (orientation: portrait) {
   body {
     background-position: top;
     background-size: auto 50%;
