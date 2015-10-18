@@ -12,10 +12,10 @@
             {% if item.submenu is defined %}
               <li><label>{{ item.label }}</label></li>
               {% for item in item.submenu %}
-                <li><a href="{{ item.path is defined ? item.path : item.link }}">{{ item.label }}</a></li>
+                <li><a href="{{ item.link }}">{{ item.label }}</a></li>
               {% endfor %}
             {% else %}
-              <li><a href="{{ item.path is defined ? item.path : item.link }}">{{ item.label }}</a></li>
+              <li><a href="{{ item.link }}">{{ item.label }}</a></li>
             {% endif %}
             {% endfor %}
             <!-- searchbox -->
