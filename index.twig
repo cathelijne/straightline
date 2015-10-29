@@ -13,7 +13,7 @@
                 <article>
                   <h2>{{ record.title }}</h2>
                   {% if record.video is not empty %}
-                    <p class="zoom2 large-10 large-centered columns"><img src="{{ record.video.thumbnail }}" alt="{{ record.video.title }}"/></p>
+                    {{ record.video.responsive }}   
                   {% elseif record.image is not empty %}
                     <p class="large-10 large-centered columns"><img src="{{ image(record.image) }}" alt=""/></p>
                   {% endif %}
