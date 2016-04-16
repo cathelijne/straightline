@@ -2,6 +2,8 @@
 
 Straight Line is a fully responsive theme for [Bolt 2.0](http://bolt.cm).
 
+**Note:**  This is for Bolt 3. Check out the `bolt-v2` branch for a Bolt 2 compatible version.
+
 
 
 ## Editing the templates and css
